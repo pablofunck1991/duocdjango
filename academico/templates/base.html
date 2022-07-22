@@ -1,0 +1,33 @@
+<!-- base.html -->
+{% load static %}
+<html>
+    <head>
+        <title>{% block title %}{% endblock title %}</title>
+        {% block css %} {% endblock css %}
+        <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
+    </head>
+    <body>
+    {% block navbar %}
+    <!-- Cabecera -->
+    <nav id="navbar">
+        <div id="navbar-logo">
+            <img src="{% static 'images/img/logo.png' %}" alt="logo">
+        </div>
+                                         
+    </nav>
+    {% endblock %}
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %} {% endblock %}
+            </div>
+        </div>
+    </div>
+    <div>
+        {% block footer %} {% endblock %}
+    </div>
+    {% block javascript %} {% endblock javascript %}
+    </body>
+</html>
